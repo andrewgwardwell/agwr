@@ -1,9 +1,6 @@
 import Head from 'next/head';
 import Link from 'next/link';
-import Image from "next/image";
 import Layout from '../components/layout';
-import { useState } from 'react';
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 // import the icons you need
 import {
@@ -23,11 +20,11 @@ export default function Home() {
     <canvas id="fullpage_canvas"></canvas>
     <div className='content'>
       <div className="image-holder">
-      <Image
+      <img
         src="/images/andrew_200.jpeg"
-        height={200}
-        width={200}
-      ></Image>
+        height="200"
+        width="200"
+      ></img>
       </div>
 
       <h1>Andrew Wardwell</h1>
