@@ -11,196 +11,29 @@
 
 }
 
-
-
-
-@keyframes filmgrain
-{
-    from
-    {
-        background-position: -20px -20px;
-        transform: rotate(0deg);
+  
+.banner-wrapper {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  overflow: hidden;
+}
+  
+.banner {
+  position: absolute;
+  overflow: hidden;
+  
+  &.dev {
+    // transform: skew(-30deg);
+    width: 200px;
+    .banner-content {
+      // transform: skew(30deg);
     }
-    33%
-    {
-        background-position: 20px 20px;
-        transform: rotate(-45deg);
-    }
-    66%
-    {
-        background-position: -20px 20px;
-        transform: rotate(111deg);
-    }
-    to
-    {
-        background-position: 20px -20px;
-        transform: rotate(-265deg);
-    }
-}
-@keyframes party
-{
-    from
-    {
-        filter: hue-rotate(0deg);
-        transform: rotate(0deg);
-    }
-    50%
-    {
-        filter: hue-rotate(180deg);
-        transform: rotate(360deg);
-    }
-    to
-    {
-        filter: hue-rotate(360deg);
-        transform: rotate(720deg);
-    }
-}
-
-body .hide_when_light { display: none; }
-body .hide_when_dark { display: initial; }
-body.canvas_active .hide_when_light { display: initial; }
-body.canvas_active .hide_when_dark { display: none; }
-
-/******************************************************************************/
-
-#flashlight
-{
-    position: fixed;
-    z-index: 1;
-    pointer-events: none;
-
-    width: 250px;
-    height: 250px;
-    border-radius: 100%;
-}
-#flashlight.grayscale
-{
-    background-color: gray;
-    mix-blend-mode: saturation;
-}
-#flashlight.white
-{
-    background-color: white;
-    mix-blend-mode: overlay;
-}
-#flashlight.soft_light
-{
-    background-color: white;
-    mix-blend-mode: soft-light;
-    filter: blur(20px);
-}
-#flashlight.invert
-{
-    background-color: white;
-    mix-blend-mode: difference;
-}
-#flashlight.party
-{
-    background-color: red;
-    mix-blend-mode: color;
-
-    border-radius: 0;
-    animation-name: party;
-    animation-duration: 5s;
-    animation-timing-function: linear;
-    animation-iteration-count: infinite;
-}
-#flashlight.wild_west
-{
-    background-color: goldenrod;
-
-    background-blend-mode: luminosity;
-    mix-blend-mode: color;
-
-    animation-name: filmgrain;
-    animation-duration: 0.2s;
-    animation-timing-function: linear;
-    animation-iteration-count: infinite;
-}
-
-/******************************************************************************/
-
-#fullpage_canvas
-{
-    position: fixed;
-    z-index: 1;
-    pointer-events: none;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    width: 100%;
-    /* On android chrome, scrolling the page causes the nav bar to recede,
-    and that creates visible space below the canvas before the resize event
-    is called. We intentionally oversize it to keep everything hidden. */
-    height: 150%;
-}
-
-.nightlight_game_dom
-{
-    position: relative;
-    width: 100%;
-    overflow: hidden;
-    margin-block-start: 1em;
-    margin-block-end: 1em;
-}
-.nightlight_game_dom .layer1,
-.nightlight_game_dom .layer2
-{
-    position: absolute;
-}
-.nightlight_game_dom .layer1
-{
-    width: 100%;
-    aspect-ratio: inherit;
-    background-size: contain;
-    background-repeat: no-repeat;
-}
-.nightlight_game_dom .layer2
-{
-    display: none;
-
-    pointer-events: none;
-    border-radius: 100%;
-    background-repeat: no-repeat;
-    aspect-ratio: 1/1;
-}
-
-#nightlight_bedroom_dom
-{
-    aspect-ratio: 512/344;
-}
-
-
-#nightlight_theylive_obey_dom
-{
-    aspect-ratio: 1920/816;
-}
-
-
-#nightlight_theylive_consume_dom
-{
-    aspect-ratio: 1920/816;
-}
-
-
-/******************************************************************************/
-
-.nightlight_game_canvas
-{
-    width: 100%;
-    margin-block-start: 1em;
-    margin-block-end: 1em;
-}
-#nightlight_bedroom_canvas
-{
-    aspect-ratio: 512/344;
-}
-#nightlight_theylive_obey_canvas
-{
-    aspect-ratio: 1920/816;
-}
-#nightlight_theylive_consume_canvas
-{
-    aspect-ratio: 1920/816;
+  }
+  .banner-content {
+    height: 200px;
+  }
+  img {
+    width: 200px;
+  }
 }
