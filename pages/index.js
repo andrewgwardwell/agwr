@@ -50,7 +50,7 @@ export default function Home() {
       </div>
 
       <h1>Andrew Wardwell</h1>
-      <p>I have been a web developer since 2012, and working as a freelancer since 2017.</p>
+      <p>I have been a professional web developer since 2012, and have been self-employed since 2017.</p>
       <p>I built and launched <Link href="https://www.mfavsmfa.com/" target="_blank"><a>MFA vs MFA</a></Link>, a comparison tool for creative writers exploring master of fine arts programs, in 2021.</p>
       <p>I have done a lot of <Link href="https://www.cipherbio.com/" target="_blank"><a >Angular</a></Link>, and a lot of <Link href="https://digitalguardian.com/" target="_blank"><a>Drupal</a></Link>, but I have also worked in wordpress, React, middleman, Jekyll, .Net, and more.</p>
       <p>I am happy working solo, or on a team. I enjoy sending hilarious gifs, but can also interface with stakeholders/customers.</p>
