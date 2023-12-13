@@ -1,16 +1,7 @@
 import Head from 'next/head';
 import Link from 'next/link';
-import { useCallback, useEffect, useState } from 'react';
+import { useCallback, useState } from 'react';
 import Layout from '../components/layout';
-
-
-// document.addEventListener('DOMContentLoaded', function(){
-//   let banner = document.getElementById('banner-wrapper');
-//   let devLayer = banner.querySelector('.dev');
-//   let delta = 0;
-
-//   banner.addEventListener('mousemove', );
-// })
 
 export default function Home() {
   const [delta, setDelta] = useState(0);
@@ -27,7 +18,18 @@ export default function Home() {
     <Layout>    
     <Head>
       <title>Andrew Wardwell</title>
-
+      <meta name="description" content="Andrew Wardwell, FE developer" />
+      <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+      <meta property="og:title" content="Andrew Wardwell" key="title" />
+      <meta property="og:description" content="Andrew Wardwell, FE developer" key="description" />
+      <meta property="og:image" content="/images/andrew_200.jpeg" key="image" />
+      <meta property="og:url" content="https://www.andrewwardwell.com/" key="url" />
+      <meta property="og:type" content="website" key="type" />
+      <meta property="og:site_name" content="Andrew Wardwell" key="site_name" />
+      <meta property="og:locale" content="en_US" key="locale" />
+      <meta property="og:locale:alternate" content="en_CA" key="locale_alt" />
+      <meta property="og:locale:alternate" content="en_GB" key="locale_alt2" />
+      <meta property='og:keyworks' content='seo optimization, technical seo, front end developer, angularjs, gatsbyjs, nextjs, drupal, wordpress, jekyll, middleman' key='keywords' />
       <link rel="icon" href="/images/andrew_200.jpeg"/>
     </Head>
     <div className="container">
@@ -51,9 +53,9 @@ export default function Home() {
 
       <h1>Andrew Wardwell</h1>
       <p>I have been a professional web developer since 2012, and have been self-employed since 2017.</p>
-      <p>I built and launched <Link href="https://www.mfavsmfa.com/" target="_blank"><a>MFA vs MFA</a></Link>, a comparison tool for creative writers exploring master of fine arts programs, in 2021.</p>
-      <p>I have done a lot of <Link href="https://www.cipherbio.com/" target="_blank"><a >Angular</a></Link>, and a lot of <Link href="https://digitalguardian.com/" target="_blank"><a>Drupal</a></Link>, but I have also worked in wordpress, React, middleman, Jekyll, .Net, and more.</p>
-      <p>I am happy working solo, or on a team. I enjoy sending hilarious gifs, but can also interface with stakeholders/customers.</p>
+      <p>I built and launched <Link href="https://www.mfavsmfa.com/" target="_blank"><a>MFA vs MFA</a></Link>, a comparison tool for creative writers exploring master of fine arts programs, in 2021 (soon to be deprecated).</p>
+      <p>I have done a lot of <Link href="https://www.edx.org/">GatsbyJs</Link>, <Link href="https://www.cipherbio.com/" target="_blank"><a >Angular</a></Link>, and <Link href="https://digitalguardian.com/" target="_blank"><a>Drupal</a></Link>, but I have also worked in wordpress, middleman, Jekyll.</p>
+      <p>I have worked on projects as the sole developer, as a member of a team and recently as an Engineering Manager. I enjoy sending hilarious gifs, but can also interface with stakeholders/customers.</p>
       <p>Everything else you <strong>need</strong> to know about me you can find <Link href="https://bit.ly/3KljeKQ" target="_blank"><a>here</a></Link>.</p>
       <p><Link href="https://www.linkedin.com/in/andrewgwardwell/" target="_blank"><a>Connect or Contact</a></Link></p>
     </div>
