@@ -53,10 +53,9 @@ export default function Home() {
 
       <h1>Andrew Wardwell</h1>
       <p>I have been a professional web developer since 2012, and have been self-employed since 2017.</p>
-      <p>I built and launched <Link href="https://www.mfavsmfa.com/" target="_blank"><a>MFA vs MFA</a></Link>, a comparison tool for creative writers exploring master of fine arts programs, in 2021 (soon to be deprecated).</p>
-      <p>I have done a lot of <Link href="https://www.edx.org/">GatsbyJs</Link>, <Link href="https://www.cipherbio.com/" target="_blank"><a >Angular</a></Link>, and <Link href="https://digitalguardian.com/" target="_blank"><a>Drupal</a></Link>, but I have also worked in wordpress, middleman, Jekyll.</p>
+      <p>I built and launched <Link href="https://web.archive.org/web/20220622121133/https://www.mfavsmfa.com/" target="_blank"><a>MFA vs MFA</a></Link>, a comparison tool for creative writers exploring master of fine arts programs, in 2021 (now deprecated).</p>
+      <p>I have done a lot of <Link href="https://www.edx.org/">GatsbyJs</Link>, <Link href="https://www.cipherbio.com/" target="_blank"><a >Angular</a></Link>, and <Link href="https://digitalguardian.com/" target="_blank"><a>Drupal</a></Link>, but I have also worked in Next, Astro, middleman, and Jekyll.</p>
       <p>I have worked on projects as the sole developer, as a member of a team and recently as an Engineering Manager. I enjoy sending hilarious gifs, but can also interface with stakeholders/customers.</p>
-      <p>Everything else you <strong>need</strong> to know about me you can find <Link href="https://bit.ly/3KljeKQ" target="_blank"><a>here</a></Link>.</p>
       <p><Link href="https://www.linkedin.com/in/andrewgwardwell/" target="_blank"><a>Connect or Contact</a></Link></p>
     </div>
     <div>
