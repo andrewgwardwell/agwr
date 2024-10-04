@@ -1,0 +1,59 @@
+
+.container {
+  max-width: 650px; // Adjust width to match the design better
+  margin: 40px auto; // More margin to centralize the container
+  padding: 20px;
+  .container {
+    max-width: 800px;
+    margin: auto;
+    padding: 0 1rem;
+  }
+
+  h1 {
+    margin-bottom: 20px; // Space before the navigation links
+  }
+
+  nav {
+    margin-bottom: 40px; // Space between nav and articles
+
+    a {
+
+      text-decoration: none; // No underlines to keep it clean
+      margin-right: 15px; // Space between links
+
+
+      &:hover {
+        text-decoration: underline; // Underline on hover for better UX
+      }
+    }
+  }
+
+  article {
+    border-bottom: 1px solid #ccc; // Separator for each article
+    padding-bottom: 20px; // Spacing at the bottom of each article
+    margin-bottom: 2rem;
+
+    h2 {
+
+      margin-bottom: 5px; // Tighter margin to keep title close to date
+    }
+
+    .date {
+      color: #666;
+      font-size: 0.8rem;
+    }
+
+    p {
+      margin-top: 10px; // Space between date and description
+      line-height: 1.6; // Improved readability
+    }
+
+    a {
+      text-decoration: none; // Clean look without underline
+
+      &:hover {
+        text-decoration: underline; // Underline on hover
+      }
+    }
+  }
+}

@@ -1,18 +1,17 @@
 import Head from 'next/head';
 import Link from 'next/link';
-import { useCallback, useState } from 'react';
 import Layout from '../components/layout';
+import { getBlogPosts} from '../lib/contentful';
+import styles from '../styles/Home.module.scss';
 
-export default function Home() {
-  const [delta, setDelta] = useState(0);
+export async function getStaticProps() {
+  const posts = await getBlogPosts();
+  return {
+    props: {posts: posts}
+  };
+}
 
-  const handleMouseMove = useCallback((e) => {
-    let offset = e.currentTarget.offsetLeft;
-    let calc = e.clientX -  offset;
-    let final = calc + 'px';
-    console.log(final);
-    setDelta(final);
-  }, [])
+export default function Home({posts}) {
 
   return (
     <Layout>    
@@ -32,38 +31,27 @@ export default function Home() {
       <meta property='og:keyworks' content='seo optimization, technical seo, front end developer, angularjs, gatsbyjs, nextjs, drupal, wordpress, jekyll, middleman' key='keywords' />
       <link rel="icon" href="/images/andrew_200.jpeg"/>
     </Head>
-    <div className="container">
-    <div className='content'>
-      <div className="image-holder">
-      <div className='banner-wrapper' id='banner-wrapper' onMouseMove={(e) => handleMouseMove(e)}>
-        <div className='banner design'>
-          <div className='banner-content'>
-            <img src='/images/andrew_200.jpeg' height="200"
-        width="200"></img>
-          </div>
-        </div>
-        <div className='banner dev' style={{width: `${delta}`}}>
-          <div className='banner-content'>
-            <img src='/images/andrew_old2.jpg' height="200"
-        ></img>
-          </div>
-        </div>
-      </div>
-      </div>
-
-      <h1>Andrew Wardwell</h1>
-      <p>I have been a professional web developer since 2012, and have been self-employed since 2017.</p>
-      <p>I built and launched <Link href="https://web.archive.org/web/20220622121133/https://www.mfavsmfa.com/" target="_blank"><a>MFA vs MFA</a></Link>, a comparison tool for creative writers exploring master of fine arts programs, in 2021 (now deprecated).</p>
-      <p>I have done a lot of <Link href="https://www.edx.org/">GatsbyJs</Link>, <Link href="https://www.cipherbio.com/" target="_blank"><a >Angular</a></Link>, and <Link href="https://digitalguardian.com/" target="_blank"><a>Drupal</a></Link>, but I have also worked in Next, Astro, middleman, and Jekyll.</p>
-      <p>I have worked on projects as the sole developer, as a member of a team and recently as an Engineering Manager. I enjoy sending hilarious gifs, but can also interface with stakeholders/customers.</p>
-      <p><Link href="https://www.linkedin.com/in/andrewgwardwell/" target="_blank"><a>Connect or Contact</a></Link></p>
-    </div>
-    <div>
-
-    </div>
 
 
-    </div>
+        <p>I have been a professional web developer since 2012, and have been self-employed since 2017.</p>
+        <p>I built and launched <Link href="https://web.archive.org/web/20220622121133/https://www.mfavsmfa.com/" target="_blank"><a>MFA vs MFA</a></Link>, a comparison tool for creative writers exploring master of fine arts programs, in 2021 (now deprecated).</p>
+        <p>I have done a lot of React (<Link href="https://aerospike.com/">Astro</Link>, <Link href="https://www.edx.org/">GatsbyJs</Link>, <Link href="https://linksquares.com/">Next</Link>), <Link href="https://www.cipherbio.com/" target="_blank"><a >Angular</a></Link>, and <Link href="https://digitalguardian.com/" target="_blank"><a>Drupal</a></Link>, but I have also worked in middleman, wordpress, and Jekyll.</p>
+        <p>I have worked on projects as the sole developer, as a member of a team and recently as an Engineering Manager. I enjoy sending hilarious gifs, but can also interface with stakeholders/customers.</p>
+        {posts.map((post) => (
+          <article key={post.sys.id}>
+            <Link href={`/${post.fields.slug}`}>
+              <div className={styles.postWrapper}>
+                <h2>{post.fields.title}</h2>
+                <p>{post.fields.teaser}</p>
+                <p className="date">{new Date(post.fields.publishedDate).toLocaleDateString()}</p>
+                <Link href={`/${post.fields.slug}`}>
+                  <a>Read more...</a>
+                </Link>
+              </div>
+            </Link>
+          </article>
+        ))}
+
     </Layout>
   )
 }
